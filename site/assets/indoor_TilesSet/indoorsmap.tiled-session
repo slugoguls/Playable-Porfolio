@@ -1,0 +1,57 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "indoorTiles.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "indoorTiles.tmx": {
+            "scale": 4.56296875,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 180.9129199054892,
+                "y": 96.20929356572955
+            }
+        },
+        "indoorTiles.tmx#furniture": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "indoorTiles.tmx#furniture2": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "indoorTiles.tmx#indoortiles": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/ASD/Desktop/site/assets/indoor_TilesSet",
+    "last.imagePath": "C:/Users/ASD/Desktop/site/assets",
+    "map.height": 10,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 20,
+    "openFiles": [
+        "indoorTiles.tmx"
+    ],
+    "project": "indoorsmap.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "indoorTiles.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
