@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('assets/font/Minecraft.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     overflow: hidden;
     background-color: black; /* Match game background */
+    font-family: 'Minecraft', sans-serif; /* Optional: default body font */
 }
+
 canvas {
     display: block;
 }

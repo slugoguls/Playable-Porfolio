@@ -78,14 +78,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         anims.create({
             key: 'idle-left',
             frames: anims.generateFrameNumbers('varun', { start: 28, end: 30 }),
-            frameRate: 1,
+            frameRate: 3,
             repeat: -1
         });
 
         anims.create({
             key: 'idle-right',
             frames: anims.generateFrameNumbers('varun', { start: 16, end: 18 }),
-            frameRate: 1,
+            frameRate: 3,
             repeat: -1
         });
     }
