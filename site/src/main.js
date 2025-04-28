@@ -1,13 +1,17 @@
 import Phaser from 'phaser'; // Import Phaser from node_modules
 import MenuScene from './scenes/MenuScene.js'; // Adjusted path for MenuScene
 import GameScene from './scenes/GameScene.js'; // Adjusted path for GameScene
+import OutdoorScene from './scenes/TheOutdoors.js'; // Adjusted path for OutdoorScene
 
-// Vite will handle the resizing and scaling automatically
+// Target resolution for the game
+const targetWidth = 320;
+const targetHeight = 180;
+
 const config = {
     type: Phaser.AUTO,
     width: window.innerWidth,   // Game width set to the window width
     height: window.innerHeight, // Game height set to the window height
-    scene: [MenuScene, GameScene],  // Start with MenuScene
+    scene: [MenuScene, GameScene, OutdoorScene],  // Start with MenuScene
     physics: {
         default: 'arcade', // Using Arcade physics
         arcade: {
@@ -17,8 +21,8 @@ const config = {
     },
     pixelArt: true,  // Ensure pixel-perfect rendering
     scale: {
-        mode: Phaser.Scale.RESIZE, // Resize mode
-        autoCenter: Phaser.Scale.CENTER_BOTH, // Auto-center canvas
+        mode: Phaser.Scale.FIT,  // Ensures the game will scale and fit the screen without stretching
+        autoCenter: Phaser.Scale.CENTER_BOTH,  // Auto-center canvas
     },
     backgroundColor: '#000000', // Black background color
 };

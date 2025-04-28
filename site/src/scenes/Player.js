@@ -3,17 +3,20 @@ import Phaser from 'phaser';
 export default class Player extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y) {
         super(scene, x, y, 'varun');
-
+        
         scene.add.existing(this);
         scene.physics.add.existing(this);
-
+    
         this.setCollideWorldBounds(true);
         this.body.setSize(17, 9);
         this.body.setOffset(15, 49);
-
+    
         this.createAnimations(scene);
-
+    
         this.lastDirection = 'up';
+    
+        // Set a default speed for the player
+        this.speed = 450;  // Default speed can be 450, modify this if you want to change speed
     }
 
     createAnimations(scene) {
@@ -91,45 +94,43 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     update(cursors, wasd) {
-        const speed = 450;
+        // Use the this.speed property for movement
         const { left, right, up, down } = cursors;
         const { left: a, right: d, up: w, down: s } = wasd;
-
+    
         this.setVelocity(0);
-
+    
         // Horizontal Movement
         if (left.isDown || a.isDown) {
-            this.setVelocityX(-speed);
+            this.setVelocityX(-this.speed);
             this.anims.play('walk-left', true);
             this.lastDirection = 'left';
         } else if (right.isDown || d.isDown) {
-            this.setVelocityX(speed);
+            this.setVelocityX(this.speed);
             this.anims.play('walk-right', true);
             this.lastDirection = 'right';
         }
-
+    
         // Vertical Movement
         if (up.isDown || w.isDown) {
-            this.setVelocityY(-speed);
+            this.setVelocityY(-this.speed);
             if (this.body.velocity.x === 0) {
                 this.anims.play('walk-up', true);
             }
             this.lastDirection = 'up';
         } else if (down.isDown || s.isDown) {
-            this.setVelocityY(speed);
+            this.setVelocityY(this.speed);
             if (this.body.velocity.x === 0) {
                 this.anims.play('walk-down', true);
             }
             this.lastDirection = 'down';
         }
-
-
-
+    
         // Idle Animations (when no movement)
         if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
             this.anims.play(`idle-${this.lastDirection}`, true);
         }
-
+    
         // Set depth based on position for sorting
         this.setDepth(this.y);
     }

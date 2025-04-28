@@ -308,6 +308,26 @@ export default class GameScene extends Phaser.Scene {
             left: Phaser.Input.Keyboard.KeyCodes.A,
             right: Phaser.Input.Keyboard.KeyCodes.D
         });
+
+            // Create a zone at the bottom middle of the screen
+        this.bottomMiddleZone = new Phaser.GameObjects.Zone(
+            this, 
+            this.cameras.main.centerX + 350,  // x position at the center
+            this.cameras.main.height - 200,  // y position just above the bottom
+            200, // width of the zone
+            50   // height of the zone
+        ).setOrigin(0.5, 0.5); // Set the origin for positioning
+        this.add.existing(this.bottomMiddleZone);
+
+        // Create graphics to make the zone visible
+        this.graphics = this.add.graphics({ lineStyle: { width: 2, color: 0xFF0000 } });
+        this.graphics.strokeRect(
+            this.bottomMiddleZone.x - this.bottomMiddleZone.width / 2,  // X position of top-left corner
+            this.bottomMiddleZone.y - this.bottomMiddleZone.height / 2, // Y position of top-left corner
+            this.bottomMiddleZone.width,  // Width of the zone
+            this.bottomMiddleZone.height  // Height of the zone 
+        );
+        
     }
 
     update() {
@@ -324,7 +344,7 @@ export default class GameScene extends Phaser.Scene {
         }
         // Hide the clickable link when the book is not open.
         this.linkText.setVisible(false);
-
+    
         // Basic depth sorting by object's y position.
         this.furnitureGroup.getChildren().forEach(f => {
             const key = f.texture.key;
@@ -348,6 +368,7 @@ export default class GameScene extends Phaser.Scene {
         // If player movement is not allowed, exit early.
         if (!this.canMove) return;
     
+        // Update the player movement.
         this.player.update(this.cursors, this.wasd);
     
         // Bookshelf interaction for displaying the Minecraft book.
@@ -362,18 +383,15 @@ export default class GameScene extends Phaser.Scene {
                 this.canMove = false;
                 console.log("📖 Minecraft book displayed - movement restricted. Press ESC to close.");
             }
-        } 
-        // Clock interaction: if the player is in the clock zone.
+        }
+        // Clock interaction.
         else if (Phaser.Geom.Rectangle.Contains(this.clockZone.getBounds(), this.player.x, this.player.y)) {
-            // Position the interact image near the clock.
             this.interactImage.setPosition(this.clockZone.x + 5, this.clockZone.y - 130);
             this.interactImage.setAlpha(1);
     
             if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
                 this.interactImage.setAlpha(0);
-                // Get the current system time.
                 const currentTime = new Date().toLocaleTimeString();
-                // Display the time in a temporary text object at the top center.
                 if (!this.clockTimeText) {
                     this.clockTimeText = this.add.text(
                         this.cameras.main.centerX,
@@ -386,7 +404,6 @@ export default class GameScene extends Phaser.Scene {
                     this.clockTimeText.setVisible(true);
                 }
                 console.log("Clock interaction: showing current time.");
-                // Hide the clock time text after 3 seconds.
                 this.time.delayedCall(3000, () => {
                     if (this.clockTimeText) {
                         this.clockTimeText.setVisible(false);
@@ -415,8 +432,21 @@ export default class GameScene extends Phaser.Scene {
                 }
             }
         } else {
-            // Hide the interact image if the player is not near any interactable zone.
+            // Hide the interact image if not near any interactable zone.
             this.interactImage.setAlpha(0);
         }
+
+        let zoneBounds = this.bottomMiddleZone.getBounds();
+        if (
+            this.player.x >= zoneBounds.x && 
+            this.player.x <= zoneBounds.x + zoneBounds.width && 
+            this.player.y >= zoneBounds.y && 
+            this.player.y <= zoneBounds.y + zoneBounds.height
+        ) {
+            this.scene.start("OutdoorScene");
+        }
+
+        
     }
+    
 }
