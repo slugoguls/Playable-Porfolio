@@ -6,8 +6,8 @@
     "activeFile": "TheOutdoors.tmx",
     "expandedProjectPaths": [
         ".",
-        "houses/mch",
-        "houses"
+        "houses",
+        "houses/mch"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -97,11 +97,11 @@
             "scaleInDock": 1
         },
         "TheOutdoors.tmx": {
-            "scale": 3,
+            "scale": 1.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 467.16666666666663,
-                "y": 460.33333333333326
+                "x": 381.6666666666667,
+                "y": 416.6666666666667
             }
         },
         "TheOutdoors.tmx#OutdoorGrass": {

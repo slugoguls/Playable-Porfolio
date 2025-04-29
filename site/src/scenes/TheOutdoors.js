@@ -74,7 +74,6 @@ export default class OutdoorScene extends Phaser.Scene {
         this.smoke.setScale(this.lolhouse.scaleX, this.lolhouse.scaleY);
 
 
-
         // Create layers from the map
         const groundLayer = map.createLayer('GrassFloor', outdoorsGrass, 0, 0);
         const wallAndStairsLayer = map.createLayer(
