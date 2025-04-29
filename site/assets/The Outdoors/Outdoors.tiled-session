@@ -5,15 +5,85 @@
     },
     "activeFile": "TheOutdoors.tmx",
     "expandedProjectPaths": [
-        "."
+        ".",
+        "houses/mch",
+        "houses"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "": {
-            "scaleInDock": 1
+            "scaleInDock": 2,
+            "scaleInEditor": 1
         },
         "#OutdoorsGrass": {
             "scaleInEditor": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -131,
+                "y": -48
+            }
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#Doors_windows_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#Smoke_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#Trees_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#bird_fly_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#bird_jump_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#cat_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#exterior": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#ground_grass_details": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#house_details": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#для анимации чх200": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#для анимации чх300": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#для скринов — копия": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx#для скринов24": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.542/Interior1.tmx": {
+            "scale": 0.0625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -248,
+                "y": 1528
+            }
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.542/Interior1.tmx#Doors_windows_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.542/Interior1.tmx#Interior": {
+            "scaleInDock": 1
+        },
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.542/Interior1.tmx#walls_floor": {
+            "scaleInDock": 1
         },
         "C:/Users/ASD/Desktop/porfolio/site/assets/indoor_TilesSet/indoorTiles.tmx": {
             "scale": 5.5,
@@ -27,12 +97,15 @@
             "scaleInDock": 1
         },
         "TheOutdoors.tmx": {
-            "scale": 1,
-            "selectedLayer": 1,
+            "scale": 3,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 489.5,
-                "y": 508
+                "x": 467.16666666666663,
+                "y": 460.33333333333326
             }
+        },
+        "TheOutdoors.tmx#OutdoorGrass": {
+            "scaleInDock": 1
         },
         "TheOutdoors.tmx#OutdoorProps": {
             "scaleInDock": 1.5
@@ -46,14 +119,49 @@
             "scaleInEditor": 1
         },
         "TheOutdoors.tmx#OutdoorsGrass": {
-            "scaleInDock": 1.5
+            "scaleInDock": 2
         },
         "TheOutdoors.tmx#OutdoorsStairs": {
+            "scaleInDock": 0.75
+        },
+        "houses/mch/Exterior.tmx": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -60.833333333333314,
+                "y": -19
+            }
+        },
+        "houses/mch/Exterior.tmx#Doors_windows_animation": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#Smoke_animation": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#Trees_animation": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#bird_fly_animation": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#bird_jump_animation": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#cat_animation": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#exterior": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#ground_grass_details": {
+            "scaleInDock": 1
+        },
+        "houses/mch/Exterior.tmx#house_details": {
             "scaleInDock": 1
         }
     },
-    "last.exportedFilePath": "C:/Users/ASD/Desktop/porfolio/site/assets/indoor_TilesSet",
-    "last.imagePath": "C:/Users/ASD/Desktop/porfolio/site/assets/The Outdoors/Texture",
+    "last.exportedFilePath": "C:/Users/ASD/Desktop/porfolio/site/assets/The Outdoors",
+    "last.imagePath": "C:/Users/ASD/Desktop/porfolio/site/assets/The Outdoors/houses/mch",
     "map.height": 60,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
@@ -61,12 +169,16 @@
     "map.tileWidth": 16,
     "map.width": 60,
     "openFiles": [
-        "TheOutdoors.tmx"
+        "TheOutdoors.tmx",
+        "houses/mch/Exterior.tmx"
     ],
     "project": "Outdoors.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "houses/mch/Exterior.tmx",
         "TheOutdoors.tmx",
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.542/Interior1.tmx",
+        "C:/Users/ASD/AppData/Local/Temp/Rar$DIa0.356/Exterior — копия.tmx",
         "C:/Users/ASD/Desktop/porfolio/site/assets/indoor_TilesSet/indoorTiles.tmx"
     ],
     "tileset.embedInMap": true,
