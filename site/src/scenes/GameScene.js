@@ -318,15 +318,6 @@ export default class GameScene extends Phaser.Scene {
             50   // height of the zone
         ).setOrigin(0.5, 0.5); // Set the origin for positioning
         this.add.existing(this.bottomMiddleZone);
-
-        // Create graphics to make the zone visible
-        this.graphics = this.add.graphics({ lineStyle: { width: 2, color: 0xFF0000 } });
-        this.graphics.strokeRect(
-            this.bottomMiddleZone.x - this.bottomMiddleZone.width / 2,  // X position of top-left corner
-            this.bottomMiddleZone.y - this.bottomMiddleZone.height / 2, // Y position of top-left corner
-            this.bottomMiddleZone.width,  // Width of the zone
-            this.bottomMiddleZone.height  // Height of the zone 
-        );
         
     }
 

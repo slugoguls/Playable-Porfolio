@@ -169,7 +169,7 @@ export default class MenuScene extends Phaser.Scene {
         const resumeY = centerY + buttonSpacing;
 
         this.startButton = this.createButton(width / 2, startY, "start_btn", "start_btn_hover", buttonScale, () => {
-            this.scene.start("OutdoorScene", { fromMenu: true });
+            this.scene.start("GameScene", { fromMenu: true });
         });
         
         this.settingsButton = this.createButton(width / 2, settingsY, "settings_btn", "settings_btn_hover", buttonScale);

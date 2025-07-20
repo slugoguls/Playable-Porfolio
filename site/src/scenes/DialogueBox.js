@@ -38,7 +38,7 @@ export default class DialogueBox {
     
             let i = 0;
             this.scene.time.addEvent({
-                delay: 5,
+                delay: 50,
                 repeat: text.length - 1,
                 callback: () => {
                     this.text.setText(text.slice(0, ++i));
