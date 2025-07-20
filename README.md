@@ -32,3 +32,33 @@ A unique interactive portfolio built like a 2D video game using Phaser.js and va
 - Java (Spring Boot or custom backend)
 
 # 📸 Screenshots
+
+![menu](https://github.com/slugoguls/Playable-Porfolio/blob/main/title.png?raw=true)
+
+![room](https://github.com/slugoguls/Playable-Porfolio/blob/main/room.png?raw=true)
+
+![skip](https://github.com/slugoguls/Playable-Porfolio/blob/main/skip.png?raw=true)
+to skip dialogues press `Space`
+
+# 🎯 Goals of the Project
+
+- Stand out with a non-traditional portfolio format
+
+- Showcase both game development and web development skills
+
+- Make visiting your portfolio fun, memorable, and interactive
+
+- Demonstrate frontend and backend integration
+
+# 🕹 Controls
+
+- Move Up	     ==      W / ↑
+- Move Down	   ==     S / ↓
+- Move Left	   ==      A / ←
+- Move Right	 ==      D / →
+- Interact	   ==       E
+
+# 📄 License
+
+MIT License © 2025 Varun Chaaras
+
