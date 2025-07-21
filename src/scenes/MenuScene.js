@@ -184,7 +184,9 @@ export default class MenuScene extends Phaser.Scene {
         });
         
         this.settingsButton = this.createButton(width / 2, settingsY, "settings_btn", "settings_btn_hover", buttonScale);
-        this.resumeButton = this.createButton(width / 2, resumeY, "resume_btn", "resume_btn_hover", buttonScale);
+        this.resumeButton = this.createButton(width / 2, resumeY, "resume_btn", "resume_btn_hover", buttonScale, () => {
+        window.open("https://drive.google.com/file/d/1d1UKN9_lhizkNTnc0CRjp3MoIzmIPzO5/view?usp=sharing", "_blank");
+    });
 
         if (this.speakerIcon) this.positionSpeakerIcon();
     }
