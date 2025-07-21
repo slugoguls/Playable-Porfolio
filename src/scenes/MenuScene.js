@@ -1,8 +1,12 @@
-const menu_bg = "../../assets/menuSheet.png"
-const start_btn = "../../assets/Start.png"
-const start_btn_hover = "../../assets/StartHover.png"
-const settings_btn = "../../assets/Setting.png"
-const settings_btn_hover = "../../assets/SettingsHover.png"
+import menuSheet from '../../assets/menuSheet.png';
+import MenuMute from '../../assets/MenuMute.png';
+import Start from '../../assets/Start.png';
+import StartHover from '../../assets/StartHover.png';
+import Setting from '../../assets/Setting.png';
+import SettingsHover from '../../assets/SettingsHover.png';
+import resume from '../../assets/resume.png';
+import resumeHover from '../../assets/resumeHover.png';
+import spacecat from '../../assets/spacecat.png';
 
 export default class MenuScene extends Phaser.Scene {
     constructor() {
@@ -11,24 +15,24 @@ export default class MenuScene extends Phaser.Scene {
 
     preload() {
         // Load visual assets only
-        this.load.spritesheet("menu_bg", menu_bg, {
+        this.load.spritesheet("menu_bg", menuSheet, {
             frameWidth: 320,
             frameHeight: 180,
             endFrame: 10
         });
-        this.load.spritesheet("speaker_icon", "/assets/MenuMute.png", {
+        this.load.spritesheet("speaker_icon", MenuMute, {
             frameWidth: 16,
             frameHeight: 16,
             endFrame: 1,
         });
-        this.load.image("start_btn", start_btn);
-        this.load.image("start_btn_hover", start_btn_hover);
-        this.load.image("settings_btn", settings_btn);
-        this.load.image("settings_btn_hover", settings_btn_hover);
-        this.load.image("resume_btn", "/assets/resume.png");
-        this.load.image("resume_btn_hover", "/assets/resumeHover.png");
+        this.load.image("start_btn", Start);
+        this.load.image("start_btn_hover", StartHover);
+        this.load.image("settings_btn", Setting);
+        this.load.image("settings_btn_hover", SettingsHover);
+        this.load.image("resume_btn", resume);
+        this.load.image("resume_btn_hover", resumeHover);
 
-        this.load.spritesheet("animated_bg", "/assets/spacecat.png", {
+        this.load.spritesheet("animated_bg", spacecat, {
             frameWidth: 64,
             frameHeight: 64,
             endFrame: 5

@@ -1,6 +1,6 @@
 export default {
     root: './',  // Set root to the project root (not src)
-    base: './',
+    base: '/',
     server: {
       open: true,
     },
