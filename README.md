@@ -43,7 +43,7 @@ A unique interactive portfolio built like a 2D video game using Phaser.js and va
 - Aseprite (for pixel art)
 
 ### Backend
-- Java (Spring Boot or custom backend)
+- Java
 
 # 📸 Screenshots
 
