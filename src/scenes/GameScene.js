@@ -5,7 +5,8 @@ import DialogueBox from './DialogueBox';
 import varunSheet from '../../assets/char/siteguy-Sheet.png';
 import dialogueBg from '../../assets/dialoguebox.png';
 import indoortiles from '../../assets/sitetiles.png';
-// import indoorTilesTmj from '../../assets/indoor_TilesSet/indoorTiles.tmj';
+// Import the tilemap JSON directly if possible
+// import indoorTilesJson from '../../assets/indoor_TilesSet/indoorTiles.json';
 
 import bookshelf from '../../assets/indoorFur/bookshelf.png';
 import carpet from '../../assets/indoorFur/Carpet.png';
@@ -38,7 +39,16 @@ export default class GameScene extends Phaser.Scene {
         });
         this.load.image('dialogueBg', dialogueBg);
         this.load.image('indoortiles', indoortiles);
-        this.load.tilemapTiledJSON('House', "../../assets/indoor_TilesSet/indoorTiles.tmj");
+        
+        // Try different path approaches for the tilemap
+        // Option 1: Try absolute path from public/assets
+        this.load.tilemapTiledJSON('House', "../../assets/indoor_TilesSet/indoorTiles.json");
+        
+        // Option 2: If that doesn't work, you might need to convert .tmj to .json
+        // this.load.tilemapTiledJSON('House', "/assets/indoor_TilesSet/indoorTiles.json");
+        
+        // Option 3: If importing directly, you could do:
+        // this.load.tilemapTiledJSON('House', null, JSON.stringify(indoorTilesJson));
 
         this.load.image('bookshelf', bookshelf);
         this.load.image('carpet', carpet);
@@ -97,31 +107,65 @@ export default class GameScene extends Phaser.Scene {
         this.lights.enable();
         this.lights.setAmbientColor(0x2c2c2c);
 
-        const map = this.make.tilemap({ key: 'House' });
-        const tilesetIndoors = map.addTilesetImage('indoortiles', 'indoortiles');
+        // Check if tilemap loaded successfully
+        let map, tilesetIndoors, floorLayer, wallLayer, roofLayer;
+        
+        try {
+            map = this.make.tilemap({ key: 'House' });
+            
+            if (map) {
+                tilesetIndoors = map.addTilesetImage('indoortiles', 'indoortiles');
+                
+                // Check if layers exist before creating them
+                const layerNames = map.getLayerNames();
+                console.log('Available tilemap layers:', layerNames);
+                
+                if (layerNames.includes('floor')) {
+                    floorLayer = map.createLayer('floor', tilesetIndoors).setDepth(0).setScale(8);
+                    floorLayer.setPipeline('Light2D');
+                }
+                
+                if (layerNames.includes('wall')) {
+                    wallLayer = map.createLayer('wall', tilesetIndoors).setDepth(0).setScale(8);
+                    wallLayer.setCollisionByProperty({ collides: true });
+                    wallLayer.setPipeline('Light2D');
+                }
+                
+                if (layerNames.includes('roof')) {
+                    roofLayer = map.createLayer('roof', tilesetIndoors).setDepth(100000).setScale(8);
+                    roofLayer.setCollisionByProperty({ collides: true });
+                    roofLayer.setPipeline('Light2D');
+                }
+                
+                this.cameras.main.setBounds(0, 0, map.widthInPixels * 8, map.heightInPixels * 8);
+            } else {
+                console.warn('Tilemap failed to load, creating fallback boundaries');
+                // Create fallback boundaries if tilemap doesn't load
+                this.cameras.main.setBounds(0, 0, 2560, 1440); // Adjust size as needed
+            }
+        } catch (error) {
+            console.error('Error loading tilemap:', error);
+            console.warn('Creating scene without tilemap...');
+            // Set fallback camera bounds
+            this.cameras.main.setBounds(0, 0, 2560, 1440);
+        }
 
-        const floorLayer = map.createLayer('floor', tilesetIndoors).setDepth(0).setScale(8);
-        const wallLayer = map.createLayer('wall', tilesetIndoors).setDepth(0).setScale(8);
-        const roofLayer = map.createLayer('roof', tilesetIndoors).setDepth(100000).setScale(8);
-
-        wallLayer.setCollisionByProperty({ collides: true });
-        roofLayer.setCollisionByProperty({ collides: true });
-
-        floorLayer.setPipeline('Light2D');
-        wallLayer.setPipeline('Light2D');
-        roofLayer.setPipeline('Light2D');
-
-        this.cameras.main.setBounds(0, 0, map.widthInPixels * 8, map.heightInPixels * 8);
         this.cameras.main.setZoom(1);
 
         this.player = new Player(this, 1000, 800);
         this.player.setScale(8);
         this.player.setDepth(9999);
 
-        this.physics.add.collider(this.player, wallLayer);
-        this.physics.add.collider(this.player, roofLayer);
+        // Only add colliders if layers exist
+        if (wallLayer) {
+            this.physics.add.collider(this.player, wallLayer);
+        }
+        if (roofLayer) {
+            this.physics.add.collider(this.player, roofLayer);
+        }
 
         this.furnitureGroup = this.physics.add.staticGroup();
+        
         // Bookshelf creation with interaction zone.
         const bookshelf = this.furnitureGroup.create(90 * 8, 50 * 8, 'bookshelf').setDepth(2).setScale(8);
         this.bookshelf = bookshelf;
@@ -134,7 +178,6 @@ export default class GameScene extends Phaser.Scene {
         this.add.existing(this.bookshelfZone);
 
         // Create an interaction zone for the clock.
-        // We assume "clock" is already added as a furniture item.
         const clock = this.furnitureGroup.create(240 * 8, 50 * 8, 'clock').setDepth(2).setScale(8);
         this.clockZone = new Phaser.GameObjects.Zone(
             this, clock.x, clock.y - 100, clock.displayWidth , clock.displayHeight 
@@ -174,7 +217,6 @@ export default class GameScene extends Phaser.Scene {
         const sofaBack = this.furnitureGroup.create(90 * 8, 120 * 8, 'sofaBack').setDepth(2).setScale(8);
         const sofaRight = this.furnitureGroup.create(63 * 8, 100 * 8, 'sofaRight').setDepth(2).setScale(8);
         this.add.image(90 * 8, 105 * 8, 'carpet').setDepth(3).setPipeline('Light2D').setScale(8);
-        // (Clock was created above.)
         this.add.image(250 * 8, 110 * 8, 'greenCarpet').setDepth(3).setPipeline('Light2D').setScale(8);
         const longTable = this.furnitureGroup.create(60 * 8, 130 * 8, 'longTable').setDepth(1).setScale(8);
         const recordPlayer = this.furnitureGroup.create(250 * 8, 100 * 8, 'recordPlayer').setDepth(2).setScale(8);
@@ -264,11 +306,13 @@ export default class GameScene extends Phaser.Scene {
                                                 return this.dialogueBox.show("Press SPACE to skip or end dialogues.");
                                             }).then(() => {
                                                 this.allowSkip = true;
+                                                this.canMove = true; // Enable movement after dialogue
                                             }).catch(error => {
                                                 console.error("Error during dialogue sequence:", error);
                                             });
                                         } else {
                                             console.warn("dialogueBox.show is not a valid function.");
+                                            this.canMove = true; // Enable movement as fallback
                                         }
                                     });
                                 });
@@ -280,6 +324,7 @@ export default class GameScene extends Phaser.Scene {
         } else {
             console.log("🚪 Entered scene without coming from menu");
             this.cameras.main.startFollow(this.player, true);
+            this.canMove = true; // Enable movement when not coming from menu
         }
 
         this.furnitureGroup.getChildren().forEach(f => {
@@ -331,7 +376,7 @@ export default class GameScene extends Phaser.Scene {
             right: Phaser.Input.Keyboard.KeyCodes.D
         });
 
-            // Create a zone at the bottom middle of the screen
+        // Create a zone at the bottom middle of the screen
         this.bottomMiddleZone = new Phaser.GameObjects.Zone(
             this, 
             this.cameras.main.centerX + 350,  // x position at the center
@@ -340,7 +385,6 @@ export default class GameScene extends Phaser.Scene {
             50   // height of the zone
         ).setOrigin(0.5, 0.5); // Set the origin for positioning
         this.add.existing(this.bottomMiddleZone);
-        
     }
 
     update() {
@@ -458,8 +502,5 @@ export default class GameScene extends Phaser.Scene {
         ) {
             this.scene.start("OutdoorScene");
         }
-
-        
     }
-    
 }
