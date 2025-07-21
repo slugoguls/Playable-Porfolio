@@ -7,6 +7,7 @@ import SettingsHover from '../../assets/SettingsHover.png';
 import resume from '../../assets/resume.png';
 import resumeHover from '../../assets/resumeHover.png';
 import spacecat from '../../assets/spacecat.png';
+import pinkFloyd from "../../assets/Sounds/Pink Floyd - Wish You Were Here (2011 Remastered).mp3";
 
 export default class MenuScene extends Phaser.Scene {
     constructor() {
@@ -92,7 +93,7 @@ export default class MenuScene extends Phaser.Scene {
         this.isMuted = false;
 
         if (!this.game.bgMusic) {
-            this.load.audio("backgroundMusic", "../../assets/Sounds/Pink Floyd - Wish You Were Here (2011 Remastered).mp3");
+            this.load.audio("backgroundMusic", pinkFloyd);
             this.load.once("complete", () => {
                 this.game.bgMusic = this.sound.add("backgroundMusic", {
                     loop: true,
