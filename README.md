@@ -18,7 +18,7 @@ A unique interactive portfolio built like a 2D video game using Phaser.js and va
 
 # 🚀 Live Demo
 
-🔗 Visit Live Portfolio
+🔗 [Visit Live Portfolio](https://varunchaaras.art)
 
 # 🎮 Features
 
