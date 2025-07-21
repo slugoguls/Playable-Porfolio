@@ -5,7 +5,7 @@ import DialogueBox from './DialogueBox';
 import varunSheet from '../../assets/char/siteguy-Sheet.png';
 import dialogueBg from '../../assets/dialoguebox.png';
 import indoortiles from '../../assets/sitetiles.png';
-import indoorTilesTmj from '../../assets/indoor_TilesSet/indoorTiles.tmj';
+// import indoorTilesTmj from '../../assets/indoor_TilesSet/indoorTiles.tmj';
 
 import bookshelf from '../../assets/indoorFur/bookshelf.png';
 import carpet from '../../assets/indoorFur/Carpet.png';
@@ -38,7 +38,7 @@ export default class GameScene extends Phaser.Scene {
         });
         this.load.image('dialogueBg', dialogueBg);
         this.load.image('indoortiles', indoortiles);
-        this.load.tilemapTiledJSON('House', indoorTilesTmj);
+        this.load.tilemapTiledJSON('House', "../../assets/indoor_TilesSet/indoorTiles.tmj");
 
         this.load.image('bookshelf', bookshelf);
         this.load.image('carpet', carpet);
