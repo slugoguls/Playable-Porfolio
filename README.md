@@ -1,3 +1,9 @@
+# ⚠️ Important Note
+
+🖥️ **This playable portfolio is optimized for desktop devices only.**
+
+📄 **If you prefer a traditional format, you can click the "Resume" button in the main menu to view a professional paper-style resume instead.**
+
 # 🕹️ Playable Portfolio Website
 
 A unique interactive portfolio built like a 2D video game using Phaser.js and vanilla JavaScript, where visitors can explore your work by controlling a character and navigating through different "rooms" (sections). Combines game design with web development for a creative, engaging user experience.
