@@ -2,10 +2,10 @@ import Phaser from 'phaser';
 import Player from './Player';
 import DialogueBox from './DialogueBox';
 
-import varunSheet from '../assets/char/siteguy-Sheet.png';
-import dialogueBg from '../assets/dialoguebox.png';
-import indoortiles from '../assets/sitetiles.png';
-import indoorTilesTmj from '../assets/indoor_TilesSet/indoorTiles.tmj';
+import varunSheet from '../../assets/char/siteguy-Sheet.png';
+import dialogueBg from '../../assets/dialoguebox.png';
+import indoortiles from '../../assets/sitetiles.png';
+import indoorTilesTmj from '../../assets/indoor_TilesSet/indoorTiles.tmj';
 
 import bookshelf from '../../assets/indoorFur/bookshelf.png';
 import carpet from '../../assets/indoorFur/Carpet.png';
