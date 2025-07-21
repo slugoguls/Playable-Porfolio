@@ -2,6 +2,28 @@ import Phaser from 'phaser';
 import Player from './Player';
 import DialogueBox from './DialogueBox';
 
+import varunSheet from '../assets/char/siteguy-Sheet.png';
+import dialogueBg from '../assets/dialoguebox.png';
+import indoortiles from '../assets/sitetiles.png';
+import indoorTilesTmj from '../assets/indoor_TilesSet/indoorTiles.tmj';
+
+import bookshelf from '../../assets/indoorFur/bookshelf.png';
+import carpet from '../../assets/indoorFur/Carpet.png';
+import lamp from '../../assets/indoorFur/Lamp.png';
+import sofaBack from '../../assets/indoorFur/SofaBack.png';
+import sofaRight from '../../assets/indoorFur/SofaRight.png';
+import clock from '../../assets/indoorFur/Clock.png';
+import greenCarpet from '../../assets/indoorFur/GreenCarpet.png';
+import longTable from '../../assets/indoorFur/LongTable.png';
+import recordPlayer from '../../assets/indoorFur/RecordPlayer.png';
+import TV from '../../assets/indoorFur/TableNoCloth.png';
+import tableCloth from '../../assets/indoorFur/TableCloth.png';
+import smallTable from '../../assets/indoorFur/smallTable.png';
+import SmallLamp from '../../assets/indoorFur/SmallLamp.png';
+import MenuPng from '../../assets/MenuForAnim.png';
+import interactE from '../../assets/interact e.png';
+import MinecraftBook from '../../assets/MinecraftBook.png';
+
 export default class GameScene extends Phaser.Scene {
     constructor() {
         super("GameScene");
@@ -10,30 +32,30 @@ export default class GameScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.spritesheet('varun', 'assets/char/siteguy-Sheet.png', {
+        this.load.spritesheet('varun', varunSheet, {
             frameWidth: 48,
             frameHeight: 64,
         });
-        this.load.image('dialogueBg', 'assets/dialoguebox.png');
-        this.load.image('indoortiles', 'assets/sitetiles.png');
-        this.load.tilemapTiledJSON('House', 'assets/indoor_TilesSet/indoorTiles.tmj');
+        this.load.image('dialogueBg', dialogueBg);
+        this.load.image('indoortiles', indoortiles);
+        this.load.tilemapTiledJSON('House', indoorTilesTmj);
 
-        this.load.image('bookshelf', 'assets/indoorFur/bookshelf.png');
-        this.load.image('carpet', 'assets/indoorFur/Carpet.png');
-        this.load.image('lamp', 'assets/indoorFur/Lamp.png');
-        this.load.image('sofaBack', 'assets/indoorFur/SofaBack.png');
-        this.load.image('sofaRight', 'assets/indoorFur/SofaRight.png');
-        this.load.image('clock', 'assets/indoorFur/Clock.png');
-        this.load.image('greenCarpet', 'assets/indoorFur/GreenCarpet.png');
-        this.load.image('longTable', 'assets/indoorFur/LongTable.png');
-        this.load.image('recordPlayer', 'assets/indoorFur/RecordPlayer.png');
-        this.load.image('TV', 'assets/indoorFur/TableNoCloth.png');
-        this.load.image('tableCloth', 'assets/indoorFur/TableCloth.png');
-        this.load.image('smallTable', 'assets/indoorFur/smallTable.png');
-        this.load.image('SmallLamp', 'assets/indoorFur/SmallLamp.png');
-        this.load.image('MenuPng', 'assets/MenuForAnim.png');
-        this.load.image('interactE', 'assets/interact e.png');
-        this.load.image('MinecraftBook', 'assets/MinecraftBook.png');
+        this.load.image('bookshelf', bookshelf);
+        this.load.image('carpet', carpet);
+        this.load.image('lamp', lamp);
+        this.load.image('sofaBack', sofaBack);
+        this.load.image('sofaRight', sofaRight);
+        this.load.image('clock', clock);
+        this.load.image('greenCarpet', greenCarpet);
+        this.load.image('longTable', longTable);
+        this.load.image('recordPlayer', recordPlayer);
+        this.load.image('TV', TV);
+        this.load.image('tableCloth', tableCloth);
+        this.load.image('smallTable', smallTable);
+        this.load.image('SmallLamp', SmallLamp);
+        this.load.image('MenuPng', MenuPng);
+        this.load.image('interactE', interactE);
+        this.load.image('MinecraftBook', MinecraftBook);
     }
 
     create() {
