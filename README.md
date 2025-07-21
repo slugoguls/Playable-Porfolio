@@ -1,8 +1,16 @@
-# ⚠️ Important Note
+# ⚠️ Important Notes
 
-🖥️ **This playable portfolio is optimized for desktop devices only.**
+### 🖥️ Optimized for Desktop Only  
+This playable portfolio is designed for desktop browsers and may not function correctly on mobile devices.
 
-📄 **If you prefer a traditional format, you can click the "Resume" button in the main menu to view a professional paper-style resume instead.**
+### 📄 Prefer a Traditional Resume?  
+You can click the "Resume" button in the main menu to view a professional, paper-style resume instead.
+
+### 🛠️ Work in Progress  
+This portfolio is an ongoing project, and I’ll continue expanding the game world over time.  
+The Settings tab is currently non-functional, and you may encounter minor glitches during gameplay. Thanks for your patience!
+
+ 
 
 # 🕹️ Playable Portfolio Website
 
